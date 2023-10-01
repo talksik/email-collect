@@ -1,0 +1,12 @@
+version: '3'
+services:
+  flowy-landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - /etc/data/flowy-landing/users.db:./users.db
+
+
