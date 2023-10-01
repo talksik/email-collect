@@ -1,9 +1,9 @@
-FROM golang:1.21 AS builder
+FROM golang AS builder
 COPY / /app
 
 WORKDIR /app/cmd
 RUN CGO_ENABLED=1 GOOS=linux go build -o main
 
 FROM alpine:latest AS production
-COPY --from=builder /app/cmd/main .
+COPY --from=builder /app/cmd .
 CMD ["./main"]
