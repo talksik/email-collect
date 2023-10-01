@@ -7,6 +7,6 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - /etc/data/flowy-landing/users.db:./users.db
+      - /users.db:/etc/data/flowy-landing/users.db
 
 
